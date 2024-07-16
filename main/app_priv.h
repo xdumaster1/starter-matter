@@ -15,6 +15,10 @@
 #include "esp_openthread_types.h"
 #endif
 
+/*start of includes for onoff pin for light*/
+#include <driver/gpio.h>
+#define LED        ((gpio_num_t) 2)
+
 /** Standard max values (used for remapping attributes) */
 #define STANDARD_BRIGHTNESS 100
 #define STANDARD_HUE 360
