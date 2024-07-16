@@ -78,4 +78,4 @@ esp_err_t app_driver_light_set_defaults(uint16_t endpoint_id)
     err |= app_driver_light_set_on_off(&val);
 
     return err;
-}----app_driver.cpp
+}
