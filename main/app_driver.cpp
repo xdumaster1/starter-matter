@@ -1,4 +1,4 @@
-/*
+ /*
    This example code is in the Public Domain (or CC0 licensed, at your option.)
 
    Unless required by applicable law or agreed to in writing, this
@@ -205,4 +205,4 @@ extern "C" void app_main()
     esp_matter::console::init();
 #endif
 }
-app_main.cpp
+
