@@ -40,7 +40,7 @@ esp_err_t app_driver_attribute_update(app_driver_handle_t driver_handle, uint16_
 {
     esp_err_t err = ESP_OK;
 
-    /* Do stuff here */
+    /* Do stuff here * 6/
     if (endpoint_id == light_endpoint_id) {
         if (cluster_id == OnOff::Id) {
             if (attribute_id == OnOff::Attributes::OnOff::Id) {
@@ -51,7 +51,7 @@ esp_err_t app_driver_attribute_update(app_driver_handle_t driver_handle, uint16_
 
     return err;
 }
-
+ /* First changing */
 app_driver_handle_t app_driver_light_init()
 {
     /* Initialize led */
