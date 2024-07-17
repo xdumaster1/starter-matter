@@ -15,7 +15,7 @@
 #include "esp_openthread_types.h"
 #endif
 
-/*start of includes for onoff pin for light*/
+/*start of includes for onoff pin for light step 7*/
 #include <driver/gpio.h>
 #define LED        ((gpio_num_t) 2)
 
