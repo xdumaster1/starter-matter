@@ -23,6 +23,7 @@ static const char *TAG = "app_driver";
 extern uint16_t light_endpoint_id;
 
 /* Do any conversions/remapping for the actual value here */
+ /* step 8 */
 static esp_err_t app_driver_light_set_on_off(esp_matter_attr_val_t *val)
 {
     ESP_LOGI(TAG, "Changing the GPIO LED!");
@@ -51,7 +52,7 @@ esp_err_t app_driver_attribute_update(app_driver_handle_t driver_handle, uint16_
 
     return err;
 }
- /* First changing */
+ /* First changing 1*/
 app_driver_handle_t app_driver_light_init()
 {
     /* Initialize led */
@@ -60,7 +61,7 @@ app_driver_handle_t app_driver_light_init()
     return (app_driver_handle_t)handle;
 }
 
-
+ /* step 9 */
 esp_err_t app_driver_light_set_defaults(uint16_t endpoint_id)
 {
     esp_err_t err = ESP_OK;
@@ -76,6 +77,5 @@ esp_err_t app_driver_light_set_defaults(uint16_t endpoint_id)
     attribute = attribute::get(cluster, OnOff::Attributes::OnOff::Id);
     attribute::get_val(attribute, &val);
     err |= app_driver_light_set_on_off(&val);
-1/
     return err;
 }
