@@ -147,21 +147,21 @@ extern "C" void app_main()
     /* Initialize the ESP NVS layer */
     nvs_flash_init();
 
-    /* Initialize driver */
+    /* Initialize driver step 2 */
     app_driver_handle_t light_handle = app_driver_light_init();
-    /* Create a Matter node and add the mandatory Root Node device type on endpoint 0 */
+    /* Create a Matter node and add the mandatory Root Node device type on endpoint 0 step 3*/
     node::config_t node_config;
     node_t *node = node::create(&node_config, app_attribute_update_cb, app_identification_cb);
-    /* Confirm that node and endpoint were created successfully */
+    /* Confirm that node and endpoint were created successfully step 4*/
     on_off_light::config_t light_config;
     light_config.on_off.on_off = DEFAULT_POWER;
     light_config.on_off.lighting.start_up_on_off = nullptr;
     endpoint_t *endpoint = on_off_light::create(node, &light_config, ENDPOINT_FLAG_NONE, light_handle);
-    
+     /*step 5*/
     if (!node || !endpoint) {
         ESP_LOGE(TAG, "Matter node creation failed");
     }
-    /* Get Endpoint Id */
+    /* Get Endpoint Id step 6 */
     light_endpoint_id = endpoint::get_id(endpoint);
 
     ESP_LOGI(TAG, "Light created with endpoint_id %d", light_endpoint_id);
