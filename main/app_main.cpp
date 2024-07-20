@@ -135,6 +135,10 @@ static esp_err_t app_attribute_update_cb(attribute::callback_type_t type, uint16
 
     if (type == PRE_UPDATE) {
         /* Do stuff here */
+       if (cluster_id == OnOff::Id && attribute_id == OnOff::Attributes::OnOff::Id) {
+            bool on = val->val.b;
+            ESP_LOGI(TAG, "Setting light %s", on ? "ON" : "OFF");
+            app_driver_light_set_power(on);
     }
 
     return err;
